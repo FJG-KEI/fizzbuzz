@@ -1,9 +1,9 @@
 package service;
 
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FizzBuzzServiceTest {
 
@@ -15,13 +15,22 @@ public class FizzBuzzServiceTest {
 
     assertThat(actual).isEqualTo("1");
   }
-  
+
   @Test
   @Description("2を渡したら2が返ってくること")
   public void test02() {
-	  FizzBuzzService target = new FizzBuzzService();
-	    String actual = target.fizzBuzz("2");
+    FizzBuzzService target = new FizzBuzzService();
+    String actual = target.fizzBuzz("2");
 
-	    assertThat(actual).isEqualTo("2");
+    assertThat(actual).isEqualTo("2");
+  }
+
+  @Test
+  @Description("3を渡したらfizzが返ってくること")
+  public void test03() {
+    FizzBuzzService target = new FizzBuzzService();
+    String actual = target.fizzBuzz("3");
+
+    assertThat(actual).isEqualTo("fizz");
   }
 }
