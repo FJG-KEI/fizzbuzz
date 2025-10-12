@@ -69,4 +69,13 @@ public class FizzBuzzServiceTest {
 
     assertThat(actual).isEqualTo("fizz");
   }
+
+  @Test
+  @Description("10を渡したらbuzzが返ってくること")
+  public void test08() {
+    FizzBuzzService target = new FizzBuzzService();
+    String actual = target.fizzBuzz("10");
+
+    assertThat(actual).isEqualTo("buzz");
+  }
 }
