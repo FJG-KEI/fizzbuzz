@@ -5,6 +5,8 @@ public class FizzBuzzService {
 	  
     if (number.equals("3")) {
       return "fizz";
+    } else if (number.equals("5")) {
+      return "buzz";
     }
     return number;
   }
