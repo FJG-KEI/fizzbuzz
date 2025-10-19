@@ -2,11 +2,21 @@ package service;
 
 public class FizzBuzzService {
   public String fizzBuzz(String number) {
-    if (Integer.parseInt(number) % 3 == 0) {
+	  boolean isMultiplesOfThree = Integer.parseInt(number) % 3 == 0;
+	  boolean isMultiplesOfFive = Integer.parseInt(number) % 5 == 0;
+	  
+    if (isMultiplesOfThree && isMultiplesOfFive) {
+      return "fizzbuzz";
+    }
+    
+    if (isMultiplesOfThree) {
       return "fizz";
-    } else if (Integer.parseInt(number) % 5 == 0) {
+    }
+    
+    if (isMultiplesOfFive) {
       return "buzz";
     }
+    
     return number;
   }
 }
