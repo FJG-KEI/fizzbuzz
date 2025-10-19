@@ -26,12 +26,16 @@ public class FizzBuzzServiceTest {
   }
 
   @Test
-  @Description("3を渡したらfizzが返ってくること")
+  @Description("3の倍数を渡したらfizzが返ってくること")
   public void test03() {
     FizzBuzzService target = new FizzBuzzService();
-    String actual = target.fizzBuzz("3");
+    String actual1 = target.fizzBuzz("3");
+    String actual2 = target.fizzBuzz("6");
+    String actual3 = target.fizzBuzz("9");
 
-    assertThat(actual).isEqualTo("fizz");
+    assertThat(actual1).isEqualTo("fizz");
+    assertThat(actual2).isEqualTo("fizz");
+    assertThat(actual3).isEqualTo("fizz");
   }
 
   @Test
@@ -51,31 +55,22 @@ public class FizzBuzzServiceTest {
 
     assertThat(actual).isEqualTo("buzz");
   }
-  
-  @Test
-  @Description("6を渡したらfizzが返ってくること")
-  public void test06() {
-    FizzBuzzService target = new FizzBuzzService();
-    String actual = target.fizzBuzz("6");
-
-    assertThat(actual).isEqualTo("fizz");
-   }
-
-  @Test
-  @Description("9を渡したらfizzが返ってくること")
-  public void test07() {
-    FizzBuzzService target = new FizzBuzzService();
-    String actual = target.fizzBuzz("9");
-
-    assertThat(actual).isEqualTo("fizz");
-  }
 
   @Test
   @Description("10を渡したらbuzzが返ってくること")
-  public void test08() {
+  public void test06() {
     FizzBuzzService target = new FizzBuzzService();
     String actual = target.fizzBuzz("10");
 
     assertThat(actual).isEqualTo("buzz");
+  }
+
+  @Test
+  @Description("15を渡したらfizzbuzzが返ってくること")
+  public void test07() {
+    FizzBuzzService target = new FizzBuzzService();
+    String actual = target.fizzBuzz("15");
+
+    assertThat(actual).isEqualTo("fizzbuzz");
   }
 }
