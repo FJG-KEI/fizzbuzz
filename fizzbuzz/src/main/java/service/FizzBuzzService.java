@@ -4,20 +4,17 @@ public class FizzBuzzService {
   public String fizzBuzz(String number) {
 	  boolean isMultiplesOfThree = Integer.parseInt(number) % 3 == 0;
 	  boolean isMultiplesOfFive = Integer.parseInt(number) % 5 == 0;
-	  boolean isMultiplesOfFifteen = Integer.parseInt(number) % 15 == 0;
-	  
-    if (isMultiplesOfFifteen) {
-      return "fizzbuzz";
-    }
-    
+	  String result = "";
+    	
     if (isMultiplesOfThree) {
-      return "fizz";
+      result += "fizz";
     }
     
     if (isMultiplesOfFive) {
-      return "buzz";
+      result += "buzz";
     }
     
-    return number;
+    return result != "" ? result : number;
+    
   }
 }
